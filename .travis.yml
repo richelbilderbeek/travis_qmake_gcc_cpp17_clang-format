@@ -15,5 +15,9 @@ script:
   - make debug
   - ./travis_qmake_gcc_cpp17_clang-format || true
   # clang-format
-  - clang-format $(ls *.cpp) -- -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -std=c++17 -fPIC > tmp.txt ; diff main.cpp tmp.txt
+  # Works OK on main_ok.cpp
+  - clang-format main_ok.cpp -- -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -std=c++17 -fPIC > tmp.txt 2>/dev/null ; diff main_ok.cpp tmp.txt --suppress-common-lines
+  # Fails on main.cpp
+  - clang-format main_ok.cpp -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -std=c++17 -fPIC > tmp.txt 2>/dev/null ; diff main.cpp tmp.txt --suppress-common-lines
+
 
