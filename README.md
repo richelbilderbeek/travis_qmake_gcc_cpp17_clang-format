@@ -1,9 +1,9 @@
-# travis_qmake_gcc_cpp17_clang-tidy
+# travis_qmake_gcc_cpp17_clang-format
 
 Branch |[![Travis CI logo](pics/TravisCI.png)](https://travis-ci.org)
 -------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-master |[![Build Status](https://travis-ci.org/richelbilderbeek/travis_qmake_gcc_cpp17_clang-tidy.svg?branch=master)](https://travis-ci.org/richelbilderbeek/travis_qmake_gcc_cpp17_clang-tidy)
-develop|[![Build Status](https://travis-ci.org/richelbilderbeek/travis_qmake_gcc_cpp17_clang-tidy.svg?branch=develop)](https://travis-ci.org/richelbilderbeek/travis_qmake_gcc_cpp17_clang-tidy)
+master |[![Build Status](https://travis-ci.org/richelbilderbeek/travis_qmake_gcc_cpp17_clang-format.svg?branch=master)](https://travis-ci.org/richelbilderbeek/travis_qmake_gcc_cpp17_clang-format)
+develop|[![Build Status](https://travis-ci.org/richelbilderbeek/travis_qmake_gcc_cpp17_clang-format.svg?branch=develop)](https://travis-ci.org/richelbilderbeek/travis_qmake_gcc_cpp17_clang-format)
 
 This GitHub is part of:
 
@@ -15,7 +15,7 @@ The goal of this project is to have a clean Travis CI build, with specs:
  * C++ version: `C++17`
  * Libraries: `STL` only
  * Code coverage: none
- * Static code analysis: `clang-tidy`
+ * Code style: `clang-format`
  * Source: one single file, `main.cpp`
 
 More complex builds:
