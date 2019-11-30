@@ -1,6 +1,6 @@
 #include <cassert>
 #include <iostream>
-int f()
+void f()
 {
 std::cout << "Hello";
  std::cout << "Hello";
