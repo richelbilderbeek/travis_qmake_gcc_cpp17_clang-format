@@ -12,7 +12,7 @@ install:
 script: 
   # Build and run this project
   - qmake
-  - make debug
+  - make debug --silent
   - ./travis_qmake_gcc_cpp17_clang-format || true
   # clang-format
   # Works OK on main_ok.cpp
