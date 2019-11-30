@@ -1,0 +1,19 @@
+language: cpp
+dist: bionic
+
+install: 
+  # Required on bionic
+  - sudo apt update -qq
+  # Qt5
+  - sudo apt install -qq qt5-qmake qt5-default
+  # clang-tidy
+  - sudo apt install -qq clang clang-format
+
+script: 
+  # Build and run this project
+  - qmake
+  - make debug
+  - ./travis_qmake_gcc_cpp17_clang-format || true
+  # clang-format
+  - clang-format $(ls *.cpp) -- -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -std=c++17 -fPIC > tmp.txt ; diff main.cpp tmp.txt
+
